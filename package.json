@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/silas123541/Disco-B.git"
+    "url": "git+https://github.com/silas123541/Disco-b.git"
   },
   "keywords": [
     "Bot",
@@ -17,9 +17,9 @@
   "author": "Silas",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/silas123541/Disco-B/issues"
+    "url": "https://github.com/silas123541/Disco-b/issues"
   },
-  "homepage": "https://github.com/silas123541/Disco-B#readme",
+  "homepage": "https://github.com/silas123541/Disco-b#readme",
   "dependencies": {
     "discord.js": "^14.14.1"
   }
