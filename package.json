@@ -1,0 +1,26 @@
+{
+  "name": "discord-bot",
+  "version": "1.0.0",
+  "description": "Bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/silas123541/Disco-B.git"
+  },
+  "keywords": [
+    "Bot",
+    "Discord"
+  ],
+  "author": "Silas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/silas123541/Disco-B/issues"
+  },
+  "homepage": "https://github.com/silas123541/Disco-B#readme",
+  "dependencies": {
+    "discord.js": "^14.14.1"
+  }
+}
