@@ -9,32 +9,6 @@ const log4js = require('log4js');
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
 // Logging
-log4js.configure({
-	appenders: {
-		out: { type: 'stdout' },
-		app: { type: "file" , filename: "logs/test_server.logs" },
-	},
-	categories: {
-		default: { appenders: ['out', 'app'], level: 'info' }
-	},
-});
-
-client.on( Events.GuildAuditLogEntryCreate, async AuditLog => {
-const { action, extra: channel, executorId, targetId } = auditLog;
-var logger = log4js.getLogger('testlogs')
-
-if (action !== AuditLogEvent ) {
-	fetchedLogs = await Guild.fetchAuditLogs({
-	type: AuditLogEvent,
-	limit: 	Infinity,
-	});
-
-logger.info(fetchedLogs.entries)
-
-};
-
-
-});
 
 // Command handling
 client.commands = new Collection();
