@@ -10,10 +10,13 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
 // Logging
 log4js.configure({
-	appenders: [
-		{ type: 'console' },
-		{ type: 'file', filename: 'logs/test_server.logs', category: ' testlogs ' }
-	]
+	appenders: {
+		out: { type: 'stdout' },
+		app: { type: "file" , filename: "logs/test_server.logs" },
+	},
+	categories: {
+		default: { appenders: ['out', 'app'], level: 'info' }
+	},
 });
 
 client.on(events.GuildAuditLogEntryCreate, async AuditLog => {
