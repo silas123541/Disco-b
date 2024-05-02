@@ -1,15 +1,19 @@
 // Require the necessary classes
 const fs = require('node:fs');
 const path = require('node:path');
-const { Client, Collection, Events, AuditLogEvent, GatewayIntentBits } = require('discord.js');
+const { Client, Collection, Events, AuditLogEvent, GatewayIntentBits, Message, Collector } = require('discord.js');
 const { token } = require('./config.json');
-const log4js = require('log4js');
+const { on } = require('node:events');
+const { userInfo } = require('node:os');
+const user = require('./Commands/utility/user');
 
 // Create a new client instance
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+const client = new Client({ 
+	intents: [GatewayIntentBits.Guilds],});
 
 // Logging
 
+;
 // Command handling
 client.commands = new Collection();
 
