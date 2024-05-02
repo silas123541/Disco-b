@@ -19,7 +19,7 @@ log4js.configure({
 	},
 });
 
-client.on(Events.GuildAuditLogEntryCreate, async AuditLog => {
+client.on( Events.GuildAuditLogEntryCreate, async AuditLog => {
 const { action, extra: channel, executorId, targetId } = auditLog;
 var logger = log4js.getLogger('testlogs')
 
