@@ -29,7 +29,7 @@ if (action !== AuditLogEvent ) {
 	limit: 	Infinity,
 	});
 
-logger.info(fetchedLogs)
+logger.info(fetchedLogs.entries)
 
 };
 
