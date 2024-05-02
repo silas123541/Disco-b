@@ -1,13 +1,40 @@
-// Require the necessary discord.js classes
+// Require the necessary classes
 const fs = require('node:fs');
 const path = require('node:path');
-const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
+const { Client, Collection, Events, AuditLogEvent, GatewayIntentBits } = require('discord.js');
 const { token } = require('./config.json');
+const log4js = require('log4js');
+const { AuditLogEvent } = require('discord.js');
 
 // Create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 
-//Command handling
+// Logging
+log4js.configure({
+	appenders: [
+		{ type: 'console' },
+		{ type: 'file', filename: 'logs/test_server.logs', category: ' testlogs ' }
+	]
+});
+
+client.on(events.GuildAuditLogEntryCreate, async AuditLog => {
+const { action, extra: channel, executorId, targetId } = auditLog;
+var logger = log4js.getLogger('testlogs')
+
+if (action !== AuditLogEvent ) {
+	fetchedLogs = await Guild.fetchAuditLogs({
+	type: AuditLogEvent,
+	limit: 	Infinity,
+	});
+
+logger.info(fetchedLogs)
+
+};
+
+
+});
+
+// Command handling
 client.commands = new Collection();
 
 const foldersPath = path.join(__dirname, 'commands');
@@ -28,7 +55,7 @@ for (const folder of commandFolders) {
 	}
 };
 
-//Event handling
+// Event handling
 const eventsPath = path.join(__dirname, 'events');
 const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
 
