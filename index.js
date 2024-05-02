@@ -4,7 +4,6 @@ const path = require('node:path');
 const { Client, Collection, Events, AuditLogEvent, GatewayIntentBits } = require('discord.js');
 const { token } = require('./config.json');
 const log4js = require('log4js');
-const { AuditLogEvent } = require('discord.js');
 
 // Create a new client instance
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
