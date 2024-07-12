@@ -11,10 +11,6 @@ const user = require('./Commands/utility/user');
 const client = new Client({ 
 	intents: [GatewayIntentBits.Guilds],});
 
-// Logging
-client.on('messageCreate', (message) => {
-	console.log(message.content)
-});
 // Command handling
 client.commands = new Collection();
 
